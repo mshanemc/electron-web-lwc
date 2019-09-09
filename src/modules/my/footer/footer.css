@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: darkgray;
+}
+
+* {
+    margin: 0px 10px;
+    text-decoration-line: none;
+}

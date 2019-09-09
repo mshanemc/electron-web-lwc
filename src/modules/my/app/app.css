@@ -1,4 +1,4 @@
-.center {
+/* .center {
     text-align: center;
 }
 .link {
@@ -35,4 +35,28 @@ img {
 
 .greeting {
     height: 75px;
+} */
+
+:host {
+    background-color: darkgrey;
+    color: whitesmoke;
+    padding: 1vh 1vw 1vh 1vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 98vh;
+    background-image: linear-gradient(#999, #fff);
+    font-family: 'Lato', 'Helvetica', sans-serif;
+}
+
+my-header {
+    flex-grow: 0;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+}
+
+my-footer {
+    flex-grow: 0;
 }
