@@ -1,5 +1,3 @@
 import { LightningElement } from 'lwc';
 
-export default class Service extends LightningElement {
-
-}
+export default class Service extends LightningElement {}

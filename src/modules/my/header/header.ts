@@ -1,5 +1,3 @@
 import { LightningElement } from 'lwc';
 
-export default class Header extends LightningElement {
-
-}
+export default class Header extends LightningElement {}
