@@ -1,0 +1,26 @@
+{
+    "name": "electron-web-lwd",
+    "scripts": {},
+    "env": {},
+    "formation": {
+        "web": {
+            "quantity": 1
+        }
+    },
+    "addons": [
+        {
+            "plan": "heroku-postgresql:hobby-dev"
+        },
+        {
+            "plan": "heroku-redis:hobby-dev"
+        },
+        {
+            "plan": "herokuconnect:demo"
+        }
+    ],
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        }
+    ]
+}
