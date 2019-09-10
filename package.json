@@ -5,6 +5,7 @@
     "bugs": "https://github.com/mshanemc/electron-web-lwc/issues",
     "dependencies": {
         "@types/pg": "^7.11.1",
+        "body-parser": "^1.19.0",
         "lwc-services": "1.3.0-beta.14",
         "navigo": "^7.1.2",
         "pg": "^7.12.1"

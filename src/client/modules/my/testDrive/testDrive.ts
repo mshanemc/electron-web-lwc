@@ -2,22 +2,34 @@ import { LightningElement } from 'lwc';
 
 export default class TestDrive extends LightningElement {
     async formSubmit(event) {
+        if (event.detail.label !== 'Submit') {
+            return;
+        }
+
         const postBody = {};
         // console.log(event.detail);
         // event.preventDefault();
-        if (event.detail.label === 'Submit') {
-            this.template.querySelectorAll('input').forEach(input => {
-                postBody[input.name] = input.value;
-            });
-            this.template.querySelectorAll('select').forEach(input => {
-                postBody[input.name] = input.value;
-            });
-            console.log(postBody);
-        }
+        this.template.querySelectorAll('input,select').forEach(input => {
+            postBody[input.name] = input.value;
+        });
+        console.log(postBody);
 
         await fetch('/testdrive', {
-            method: 'post',
-            body: JSON.stringify(postBody)
+            method: 'POST',
+            body: JSON.stringify(postBody),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
+
+        this.dispatchEvent(
+            new CustomEvent('navigate', {
+                composed: true,
+                bubbles: true,
+                detail: {
+                    path: '/#testdrivesuccess'
+                }
+            })
+        );
     }
 }
