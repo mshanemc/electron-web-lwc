@@ -3,12 +3,12 @@ import { LightningElement, api, track } from 'lwc';
 export default class Button extends LightningElement {
     @track styleClass = 'slds-button';
 
-    @api url;
+    @api url: string = '';
     @api target = '_blank';
 
-    @api disabled;
+    @api disabled: boolean = false;
 
-    @api label;
+    @api label: string = '';
     _variant = 'base';
 
     @api
@@ -47,15 +47,25 @@ export default class Button extends LightningElement {
         }
     }
 
-    click(event) {
-        event.stopPropagation();
-        event.preventDefault();
-        this.dispatchEvent(
-            new CustomEvent('click', {
-                detail: {
-                    label: this.label
-                }
-            })
-        );
+    click() {
+        if (this.url) {
+            this.dispatchEvent(
+                new CustomEvent('navigate', {
+                    // bubbles: true,
+                    // composed: true,
+                    detail: {
+                        path: this.url
+                    }
+                })
+            );
+        } else {
+            this.dispatchEvent(
+                new CustomEvent('click', {
+                    detail: {
+                        label: this.label
+                    }
+                })
+            );
+        }
     }
 }

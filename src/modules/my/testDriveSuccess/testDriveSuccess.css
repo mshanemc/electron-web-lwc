@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+}
+
+.leadform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: darkgrey;
+    padding: 4vh;
+    align-self: center;
+    margin: 4vh 0vh;
+}
+
+.leadform h1 {
+    text-align: center;
+}
