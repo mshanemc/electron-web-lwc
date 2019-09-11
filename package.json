@@ -20,7 +20,7 @@
         "typescript": "^3.6.3"
     },
     "engines": {
-        "node": ">12.10.0"
+        "node": "^10"
     },
     "homepage": "https://github.com/mshanemc/electron-web-lwc",
     "husky": {
